@@ -16,7 +16,7 @@
 
 题一： 面试题3（一）：找出数组中重复的数字 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了， 也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，">
 <meta property="og:image" content="https://user-images.githubusercontent.com/38417362/62833677-52ed7500-bc75-11e9-88a2-2de26ea05795.jpg">
-<meta property="og:updated_time" content="2019-08-11T15:09:39.214Z">
+<meta property="og:updated_time" content="2019-08-11T15:17:34.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="myfirsttest1">
 <meta name="twitter:description" content="剑指offer刷题一本文关键字： 数组，二维数组，for循环，空指针nullptr，while循环
@@ -60,9 +60,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://leafgodgood.github.io"></form>
@@ -100,7 +100,8 @@
 <p><strong>题一：</strong><br> 面试题3（一）：找出数组中重复的数字<br> 题目：在一个长度为n的数组里的所有数字都在0到n-1的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，<br> 也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，<br> 那么对应的输出是重复的数字2或者3。</p>
 <p>思路一：取索引为0的数，与其他数一一对比，取索引为1的数，与其他一一对比，输出打印，用两个for循环和一个if，注意内置for循环索引大于外置for循环索引。</p>
 <p>思路二：</p>
-<p>思路一代码：<br>‘’’</p>
+<p>思路一代码：</p>
+<p>‘’’</p>
 <p>#include<iostream><br>//找出长度为n的数组里包含一个或多个重复的数字<br>using namespace std;<br>int FindLikeArray(int numbers[],int n) {<br>    int j = 1;<br>    for (int i = 0; i &lt; n; ++i) {</iostream></p>
 <pre><code>    for (int j=i+1; j &lt; n; j++) {
         if (numbers[i] == numbers[j]) {
@@ -112,6 +113,7 @@
     return 0;
 </code></pre><p>}<br>void test() {<br>    int numbers[] = {6,1,2,2,6,1,3 };<br>    FindLikeArray( numbers,7);<br>}</p>
 <p>int main() {<br>    test();<br>}</p>
+<p>‘’’</p>
 <p><strong>题二：</strong><br>// 面试题4：二维数组中的查找<br>// 题目：在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按<br>// 照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个<br>// 整数，判断数组中是否含有该整数。</p>
 <p>‘’’</p>
 <p>#include<iostream><br>//判断某个数在二维数组中是否存在</iostream></p>
@@ -123,12 +125,13 @@ cout &lt;&lt; found;
 return found;
 </code></pre><p>}</p>
 <p>void test() {<br>    int matrix[][4] = { {1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15} };<br>    bool result=Find( <em>matrix,4,4,3);<br>    cout &lt;&lt; </em>matrix;<br>}</p>
-<p>int main() {<br>    test ();<br>}<br>‘’’</p>
+<p>int main() {<br>    test ();<br>}</p>
+<p>‘’’</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leafgodgood.github.io/2019/08/11/myfirsttest1 (2)/" data-id="cjz73ukrb000084x6iek5q8b1" class="article-share-link">Share</a>
+      <a data-url="http://leafgodgood.github.io/2019/08/11/myfirsttest1 (2)/" data-id="cjz746gg10001kwx6xgs8thz7" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -139,7 +142,7 @@ return found;
   
   
     <a href="/2019/08/11/myfirsttest1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">myfirsttest1</div>
     </a>
   
@@ -172,7 +175,7 @@ return found;
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -201,7 +204,7 @@ return found;
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2019 leafgod<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
