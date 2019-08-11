@@ -84,11 +84,50 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><img src="https://user-images.githubusercontent.com/38417362/62833677-52ed7500-bc75-11e9-88a2-2de26ea05795.jpg" alt="111"></p>
+<blockquote>
+<p><strong>��ָofferˢ��һ</strong><br>���Ĺؼ��֣� <strong>����</strong>��<strong>��ά����</strong>��<strong>forѭ��</strong>��<strong>��ָ��nullptr</strong>��<strong>whileѭ��</strong></p>
+</blockquote>
+<p><strong>��һ��</strong><br> ������3��һ�����ҳ��������ظ�������<br> ��Ŀ����һ������Ϊn�����������������ֶ���0��n-1�ķ�Χ�ڡ�������ĳЩ�������ظ��ģ�����֪���м��������ظ��ˣ�<br> Ҳ��֪��ÿ�������ظ��˼��Ρ����ҳ�����������һ���ظ������֡����磬�������볤��Ϊ7������{2, 3, 1, 0, 2, 5, 3}��<br> ��ô��Ӧ���������ظ�������2����3��</p>
+<p>˼·һ��ȡ����Ϊ0��������������һһ�Աȣ�ȡ����Ϊ1������������һһ�Աȣ�������ӡ��������forѭ����һ��if��ע������forѭ��������������forѭ��������</p>
+<p>���룺<br>‘’’</p>
+<p>#include<iostream><br>//�ҳ�����Ϊn������������һ���������ظ�������<br>using namespace std;<br>int FindLikeArray(int numbers[],int n) {<br>    int j = 1;<br>    for (int i = 0; i &lt; n; ++i) {</iostream></p>
+<pre><code>    for (int j=i+1; j &lt; n; j++) {
+        if (numbers[i] == numbers[j]) {
+            cout &lt;&lt; numbers[j] ;
+            //cout &lt;&lt; numbers[j] &lt;&lt; endl;
+        }
+
+    }
+
+}
+
+    return 0;
+</code></pre><p>}<br>void test() {<br>    int numbers[] = {6,1,2,2,6,1,3 };<br>    FindLikeArray( numbers,7);</p>
+<p>}</p>
+<p>int main() {</p>
+<pre><code>test();
+</code></pre><p>}</p>
+<p>‘’’</p>
+<p><strong>������</strong><br>// ������4����ά�����еĲ���<br>// ��Ŀ����һ����ά�����У�ÿһ�ж����մ������ҵ�����˳��������ÿһ�ж���<br>// �մ��ϵ��µ�����˳��������������һ������������������һ����ά������һ��<br>// �������ж��������Ƿ����и�������</p>
+<p>‘’’</p>
+<p>#include<iostream><br>//�ж�ĳ�����ڶ�ά�������Ƿ�����</iostream></p>
+<p>using namespace std;</p>
+<p>bool Find(int <em>matrix,int rows,int columns,int number) {<br>    bool found = false;<br>    if (&amp;matrix != nullptr &amp;&amp; rows &gt; 0 &amp;&amp; columns &gt; 0) {<br>        int row = 0;<br>        int column = columns - 1;<br>        while (row &lt; rows &amp;&amp; column &gt;= 0)<br>        {<br>            if (matrix[row </em> columns + column] == number)<br>            {<br>                found = true;<br>                break;<br>            }<br>            else if (matrix[row * columns + column] &gt; number)<br>                –column;<br>            else<br>                ++row;<br>        }</p>
+<pre><code>}
+
+cout &lt;&lt; found;
+return found;
+</code></pre><p>}</p>
+<p>void test() {<br>    int matrix[][4] = { {1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15} };<br>    bool result=Find( <em>matrix,4,4,3);<br>    cout &lt;&lt; </em>matrix;<br>}</p>
+<p>int main() {</p>
+<pre><code>test ();
+</code></pre><p>}</p>
+<p>‘’’</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leafgodgood.github.io/2019/08/11/myfirsttest1/" data-id="cjz7267590000mox6fvz8ornu" class="article-share-link">Share</a>
+      <a data-url="http://leafgodgood.github.io/2019/08/11/myfirsttest1/" data-id="cjz73bv9f0001a4x63jirk4hv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -204,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://leafgodgood.github.io/2019/08/11/hello-world/" data-id="cjz72675d0001mox60kl2y7n9" class="article-share-link">Share</a>
+      <a data-url="http://leafgodgood.github.io/2019/08/11/hello-world/" data-id="cjz73bv9a0000a4x67vknr1xu" class="article-share-link">Share</a>
       
       
     </footer>
