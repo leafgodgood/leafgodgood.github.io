@@ -159,74 +159,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-String1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/11/String1/">Array1</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/11/String1/" class="archive-article-date">
-  	<time datetime="2019-08-11T14:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>剑指offer刷题二</strong><br>本文关键字： <strong>字符串</strong>，<strong>string</strong>，<strong>字符串‘\0’占一个字节</strong>，<strong>空指针nullptr</strong>，<strong>while循环</strong></p>
-</blockquote>
-<p><strong>题一：</strong><br> 面试题5（一）：替换空格<br> 题目：请实现一个函数，把字符串中的每个空格替换成”%20”。例如输入“We are happy.”，<br> 则输出“We%20are%20happy.”。</p>
-<p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void ReplaceBlank(char str[], int length)</div><div class="line">&#123;</div><div class="line">	if (str == nullptr &amp;&amp; length &lt;= 0)</div><div class="line">		return;</div><div class="line"></div><div class="line">	/*originalLength 为字符串str的实际长度*/</div><div class="line">	int originalLength = 0;</div><div class="line">	int numberOfBlank = 0;</div><div class="line">	int i = 0;</div><div class="line">	while (str[i] != &apos;\0&apos;)</div><div class="line">	&#123;</div><div class="line">		++originalLength;</div><div class="line"></div><div class="line">		if (str[i] == &apos; &apos;)</div><div class="line">			++numberOfBlank;</div><div class="line"></div><div class="line">		++i;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/*newLength 为把空格替换成&apos;%20&apos;之后的长度*/</div><div class="line">	int newLength = originalLength + numberOfBlank * 2;</div><div class="line">	if (newLength &gt; length)</div><div class="line">		return;</div><div class="line"></div><div class="line">	int indexOfOriginal = originalLength;</div><div class="line">	int indexOfNew = newLength;</div><div class="line">	while (indexOfOriginal &gt;= 0 &amp;&amp; indexOfNew &gt; indexOfOriginal)</div><div class="line">	&#123;</div><div class="line">		if (str[indexOfOriginal] == &apos; &apos;)</div><div class="line">		&#123;</div><div class="line">			str[indexOfNew--] = &apos;0&apos;;</div><div class="line">			str[indexOfNew--] = &apos;2&apos;;</div><div class="line">			str[indexOfNew--] = &apos;%&apos;;</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			str[indexOfNew--] = str[indexOfOriginal];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		--indexOfOriginal;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// ====================测试代码====================</div><div class="line">void Test()</div><div class="line">&#123;</div><div class="line">	</div><div class="line">	const int length = 100;</div><div class="line">	char str[length] = &quot;hello  world &quot;;</div><div class="line">	ReplaceBlank(str, length);</div><div class="line">	cout &lt;&lt; str &lt;&lt; endl;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">int main(int argc, char* argv[])</div><div class="line">&#123;</div><div class="line">	Test();</div><div class="line"></div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注意问题：1）未知长度数组输入注意用new和vector，动态分配内存。<br>           2）i++与++i在循环体中，没区别，主要是先赋值再加1和加1后赋值，在打印的时候有区别（printf”%d\n”,i++）。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/11/String1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Array1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -273,6 +205,74 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/11/Array1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-String1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/11/String1/">String1</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/11/String1/" class="archive-article-date">
+  	<time datetime="2019-08-11T14:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>剑指offer刷题二</strong><br>本文关键字： <strong>字符串</strong>，<strong>string</strong>，<strong>字符串‘\0’占一个字节</strong>，<strong>空指针nullptr</strong>，<strong>while循环</strong></p>
+</blockquote>
+<p><strong>题一：</strong><br> 面试题5（一）：替换空格<br> 题目：请实现一个函数，把字符串中的每个空格替换成”%20”。例如输入“We are happy.”，<br> 则输出“We%20are%20happy.”。</p>
+<p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">#include &lt;cstdio&gt;</div><div class="line">#include &lt;cstring&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">using namespace std;</div><div class="line"></div><div class="line">void ReplaceBlank(char str[], int length)</div><div class="line">&#123;</div><div class="line">	if (str == nullptr &amp;&amp; length &lt;= 0)</div><div class="line">		return;</div><div class="line"></div><div class="line">	/*originalLength 为字符串str的实际长度*/</div><div class="line">	int originalLength = 0;</div><div class="line">	int numberOfBlank = 0;</div><div class="line">	int i = 0;</div><div class="line">	while (str[i] != &apos;\0&apos;)</div><div class="line">	&#123;</div><div class="line">		++originalLength;</div><div class="line"></div><div class="line">		if (str[i] == &apos; &apos;)</div><div class="line">			++numberOfBlank;</div><div class="line"></div><div class="line">		++i;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/*newLength 为把空格替换成&apos;%20&apos;之后的长度*/</div><div class="line">	int newLength = originalLength + numberOfBlank * 2;</div><div class="line">	if (newLength &gt; length)</div><div class="line">		return;</div><div class="line"></div><div class="line">	int indexOfOriginal = originalLength;</div><div class="line">	int indexOfNew = newLength;</div><div class="line">	while (indexOfOriginal &gt;= 0 &amp;&amp; indexOfNew &gt; indexOfOriginal)</div><div class="line">	&#123;</div><div class="line">		if (str[indexOfOriginal] == &apos; &apos;)</div><div class="line">		&#123;</div><div class="line">			str[indexOfNew--] = &apos;0&apos;;</div><div class="line">			str[indexOfNew--] = &apos;2&apos;;</div><div class="line">			str[indexOfNew--] = &apos;%&apos;;</div><div class="line">		&#125;</div><div class="line">		else</div><div class="line">		&#123;</div><div class="line">			str[indexOfNew--] = str[indexOfOriginal];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		--indexOfOriginal;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">// ====================测试代码====================</div><div class="line">void Test()</div><div class="line">&#123;</div><div class="line">	</div><div class="line">	const int length = 100;</div><div class="line">	char str[length] = &quot;hello  world &quot;;</div><div class="line">	ReplaceBlank(str, length);</div><div class="line">	cout &lt;&lt; str &lt;&lt; endl;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">int main(int argc, char* argv[])</div><div class="line">&#123;</div><div class="line">	Test();</div><div class="line"></div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意问题：1）未知长度数组输入注意用new和vector，动态分配内存。<br>           2）i++与++i在循环体中，没区别，主要是先赋值再加1和加1后赋值，在打印的时候有区别（printf”%d\n”,i++）。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/11/String1/">展开全文 >></a>
         </p>
       
 
