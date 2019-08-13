@@ -86,10 +86,6 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -105,9 +101,9 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
-					<a class="qq" target="_blank" href="/1048121733" title="qq"><i class="icon-qq"></i></a>
+					<a class="weixin" target="_blank" href="/![wechat](https:/user-images.githubusercontent.com/38417362/62948880-c16a3880-be17-11e9-8221-ef75adc99589.png) " title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="mail" target="_blank" href="/1048121733@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="https://mail.qq.com/" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -150,9 +146,9 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
-						<a class="qq" target="_blank" href="/1048121733" title="qq"><i class="icon-qq"></i></a>
+						<a class="weixin" target="_blank" href="/![wechat](https:/user-images.githubusercontent.com/38417362/62948880-c16a3880-be17-11e9-8221-ef75adc99589.png) " title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="mail" target="_blank" href="/1048121733@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="https://mail.qq.com/" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -291,7 +287,7 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -402,6 +398,19 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -442,11 +451,11 @@ Hexo是一个快速、简洁且高效的博客框架，支持 GitHub Flavored Ma
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -490,25 +499,17 @@ MathJax.Hub.Queue(function() {
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -575,38 +576,6 @@ MathJax.Hub.Queue(function() {
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
